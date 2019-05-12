@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <Router history={history}>
-      <div className="App">
+      <div className="app">
         <AppRoutes />
       </div>
     </Router>

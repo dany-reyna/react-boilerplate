@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import SignOutButton from '../../../components/SignOutButton/SignOutButton';
+import './Nav.css';
 
 const Nav = ({ match }) => (
-  <div>
+  <div className="nav">
     <button type="button">
       <Link to={match.url}>Home</Link>
     </button>

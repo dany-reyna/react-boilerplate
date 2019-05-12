@@ -1,5 +1,10 @@
 import React from 'react';
+import './Section.css';
 
-const Section = () => <h1>Section</h1>;
+const Section = () => (
+  <div className="section">
+    <h1>Section</h1>
+  </div>
+);
 
 export default Section;

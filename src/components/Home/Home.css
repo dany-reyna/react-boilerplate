@@ -1,0 +1,3 @@
+.home {
+  grid-column: col-start 3 / span 6;
+}

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../shared/redux/actions';
 import fakeAuth from '../../auth/fakeAuth';
 import randomNumber from '../../shared/utils/randomNumber';
+import './SignInPage.css';
 
 const SignInPage = ({ location, isSignedIn, signInAction }) => {
   const [redirectToReferrer, setRedirectToReferrer] = useState(false);
@@ -20,7 +21,7 @@ const SignInPage = ({ location, isSignedIn, signInAction }) => {
   }
 
   return (
-    <div>
+    <div className="sign-in-page">
       <p>
         {'Sign in to access:  '}
         {referrer.pathname}
