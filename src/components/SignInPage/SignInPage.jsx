@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { signIn } from '../../shared/redux/actions';
-import fakeAuth from '../../auth/fakeAuth';
-import randomNumber from '../../shared/utils/randomNumber';
 import './SignInPage.css';
 
 const SignInPage = ({ location, isSignedIn, signInAction }) => {
@@ -12,8 +10,7 @@ const SignInPage = ({ location, isSignedIn, signInAction }) => {
   const { referrer } = location.state || { referrer: { pathname: '/app' } };
 
   const onSignInClick = () => {
-    fakeAuth.signIn(() => setRedirectToReferrer(true));
-    signInAction(randomNumber(0, 100));
+    signInAction(() => setRedirectToReferrer(true));
   };
 
   if (redirectToReferrer === true || isSignedIn === true) {
@@ -39,7 +36,7 @@ SignInPage.propTypes = {
     pathname: PropTypes.string,
     search: PropTypes.string,
     hash: PropTypes.string,
-    state: PropTypes.shape,
+    state: PropTypes.shape({}),
   }).isRequired,
   isSignedIn: PropTypes.bool.isRequired,
   signInAction: PropTypes.func.isRequired,

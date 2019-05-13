@@ -4,7 +4,7 @@ import history from '../shared/history';
 import AppRoutes from '../shared/routes/AppRoutes';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <Router history={history}>
       <div className="app">
@@ -12,6 +12,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

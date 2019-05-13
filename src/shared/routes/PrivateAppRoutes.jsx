@@ -13,7 +13,7 @@ const PrivateAppRoutes = ({ match }) => (
 
 PrivateAppRoutes.propTypes = {
   match: PropTypes.shape({
-    params: PropTypes.shape,
+    params: PropTypes.shape({}),
     isExact: PropTypes.bool,
     path: PropTypes.string,
     url: PropTypes.string,

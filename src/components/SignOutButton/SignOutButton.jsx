@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import history from '../../shared/history';
-import fakeAuth from '../../auth/fakeAuth';
 import { signOut } from '../../shared/redux/actions';
 
 const SignOutButton = ({ signOutAction }) => {
   const onSignOutClick = () => {
-    fakeAuth.signOut(() => history.push('/app'));
-    signOutAction();
+    signOutAction(() => history.push('/'));
   };
 
   return (

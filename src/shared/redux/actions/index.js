@@ -1,14 +1,25 @@
 import { SIGN_IN, SIGN_OUT } from './types';
+import fakeAuth from '../../../auth/fakeAuth';
+import randomNumber from '../../utils/randomNumber';
 
-export const signIn = userId => {
-  return {
+export const signIn = callback => async dispatch => {
+  await fakeAuth.signIn();
+  const userId = randomNumber(0, 100);
+
+  callback();
+
+  dispatch({
     type: SIGN_IN,
-    payload: userId,
-  };
+    payload: { userId },
+  });
 };
 
-export const signOut = () => {
-  return {
+export const signOut = callback => async dispatch => {
+  await fakeAuth.signOut();
+
+  callback();
+
+  dispatch({
     type: SIGN_OUT,
-  };
+  });
 };

@@ -1,12 +1,14 @@
+const timeout = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 const fakeAuth = {
   isAuthenticated: false,
-  signIn(cb) {
+  async signIn() {
+    await timeout(300);
     this.isAuthenticated = true;
-    setTimeout(cb, 300);
   },
-  signOut(cb) {
+  async signOut() {
+    await timeout(300);
     this.isAuthenticated = false;
-    setTimeout(cb, 300);
   },
 };
 
