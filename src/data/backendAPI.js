@@ -1,5 +1,6 @@
 import axios from 'axios';
-import { BASE_URL, HEADERS } from './backendConfig';
+import _ from 'lodash';
+import { BASE_URL, HEADERS, getAuthorizationHeader } from './backendConfig';
 
 class backendAPI {
   constructor() {
@@ -58,6 +59,8 @@ class backendAPI {
   }
 
   request({ url, method, body = {}, headers = {} }) {
+    this.headers = { ...getAuthorizationHeader(), ...this.headers };
+
     const requestSetup = {
       method,
       baseURL: this.baseURL,
@@ -66,7 +69,7 @@ class backendAPI {
       cancelToken: this.source.token,
     };
 
-    if (headers) {
+    if (!_.isEmpty(headers)) {
       requestSetup.headers = { ...requestSetup.headers, ...headers };
     }
 
