@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import history from '../../shared/history';
-import { signOut } from '../../shared/redux/actions';
+import { signOut } from '../../shared/redux/actions/auth';
 
 const SignOutButton = ({ signOutAction }) => {
   const onSignOutClick = () => {

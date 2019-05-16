@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signIn } from '../../shared/redux/actions';
+import { signIn } from '../../shared/redux/actions/auth';
 import './SignInPage.css';
 
 const SignInPage = ({ location, isSignedIn, signInAction }) => {
